@@ -7,6 +7,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TestBase {
@@ -17,8 +18,7 @@ public class TestBase {
 	{
 		try{
 			prop = new Properties();
-			FileInputStream fis = new FileInputStream("/Users/user/Desktop/WorkSpace/FreeCRMTest/src/main"
-					+ "/java/com/crm/qa/config/config.properties");
+			FileInputStream fis = new FileInputStream("/Users/pkumar/git/CRMRep/src/main/java/com/crm/qa/config/config.properties");
 			prop.load(fis);
 			
 		}
@@ -39,7 +39,8 @@ public class TestBase {
 		
 		if(browserName.equals("chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver","D:\\ChromeDriver\\chrome.exe");
+			System.setProperty("webdriver.chrome.driver","D:\\ChromeDriver\\chromedriver.exe");
+			driver = new ChromeDriver();
 		}
 		else if(browserName.equals("FireFox"))
 		{
